@@ -7,7 +7,7 @@ import { HiMenu, HiX } from 'react-icons/hi'
 export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <nav className="flex justify-between p-4 w-full text-xl text-white bg-[#c87377]">
+        <nav className="flex fixed top-0 justify-between p-4 px-8 md:px-16 w-full z-50 text-xl text-white bg-[#c87377] items-stretch">
             <div>
                 <Link href="#home" className='font-bold'>Alana Koshikawa</Link>
             </div>
@@ -28,14 +28,17 @@ export default function NavBar() {
 
             {/* Mobile View */}
             {isOpen && (
-                <div className='md:hidden absolute left-0 mt-12 w-full bg-[#c87377]'>
-                    <div className='h-px bg-white blur'/>
-                    <div className='flex flex-col p-4 gap-4'>
-                        <Link href="#home" onClick={() => setIsOpen(false)}>Home</Link>
-                        <Link href="#about" onClick={() => setIsOpen(false)}>About</Link>
-                        <Link href="#projects" onClick={() => setIsOpen(false)}>Projects</Link>
+                <>
+                    <div className='fixed top-16 inset-0 bg-black/40 z-40' onClick={() => setIsOpen(false)}></div>
+                    <div className='md:hidden absolute left-0 mt-12 w-full bg-[#c87377] transition-all duration-300 z-50'>
+                        <div className='h-px bg-white'/>
+                        <div className='flex flex-col p-4 ml-4 gap-4'>
+                            <Link href="#home" onClick={() => setIsOpen(false)}>Home</Link>
+                            <Link href="#about" onClick={() => setIsOpen(false)}>About</Link>
+                            <Link href="#projects" onClick={() => setIsOpen(false)}>Projects</Link>
+                        </div>
                     </div>
-                </div>
+                </>
             )}
         </nav>
     );
