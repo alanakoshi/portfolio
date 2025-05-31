@@ -27,8 +27,14 @@ export default function Home() {
       <section id="about" className="mt-24">
         <div className="flex flex-col md:flex-row items-center justify-center items-stretch ">
           {/* Profile */}
-          <div className="flex justify-center relative m-8 overflow-hidden rounded-xl">
+          <div className="flex flex-col justify-center relative m-8 overflow-hidden rounded-xl">
             <Image src="/profile.jpg" alt="Profile" width={400} height={400} className="object-cover rounded-xl"/>
+            {/* External Links */}
+            <div className="flex flex-row justify-center gap-2 md:gap-16 mt-6">
+              <a href="https://www.linkedin.com/in/alanakoshikawa/" className="border rounded-xl border-[#c87377] px-2">LinkedIn</a>
+              <a href="https://github.com/alanakoshi" className="border rounded-xl border-[#c87377] px-2">GitHub</a>
+              <a href="/resume.pdf" className="border rounded-xl border-[#c87377] px-2">Resume</a>
+            </div>
           </div>
           {/* About Message */}
           <div className="flex flex-col justify-center items-center m-8 text-black text-lg p-4 md:w-1/2 xl:p-12 space-y-6 shadow-xl rounded-xl border border-[#c87377]">
