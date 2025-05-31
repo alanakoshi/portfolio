@@ -29,6 +29,7 @@ export default function NavBar() {
             {/* Mobile View */}
             {isOpen && (
                 <>
+                    {/* Dark Overlay */}
                     <div className='fixed top-16 inset-0 bg-black/40 z-40' onClick={() => setIsOpen(false)}></div>
                     <div className='md:hidden absolute left-0 mt-12 w-full bg-[#c87377] transition-all duration-300 z-50'>
                         <div className='h-px bg-white'/>
