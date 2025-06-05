@@ -23,7 +23,7 @@ export default function About() {
     ]
 
     return (
-        <div className="m-8 mt-24">
+        <section id="about" className="m-8 mt-24">
             <div className="flex flex-col md:flex-row items-center justify-center items-stretch ">
                 {/* Profile */}
                 <div className="flex flex-col items-center relative m-8 overflow-hidden rounded-xl">
@@ -61,6 +61,6 @@ export default function About() {
                 <h2 className="text-xl mt-8 mb-4">Tools and Technologies</h2>
                 <SkillsGrid icons={toolsAndTechIcons}/>
             </div>
-        </div>
+        </section>
     )
 }

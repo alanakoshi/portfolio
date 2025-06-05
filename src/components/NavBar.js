@@ -9,12 +9,12 @@ export default function NavBar() {
     return (
         <nav className="flex fixed top-0 justify-between p-4 px-8 md:px-16 w-full z-50 text-xl text-white bg-[#c87377] items-stretch">
             <div>
-                <Link href="#home" className='font-bold'>Alana Koshikawa</Link>
+                <Link href="/" className='font-bold'>Alana Koshikawa</Link>
             </div>
 
             {/* Desktop View */}
             <div className='hidden md:flex gap-6'>
-                <Link href="#home">Home</Link>
+                <Link href="/">Home</Link>
                 <Link href="#about">About</Link>
                 <Link href="#projects">Projects</Link>
             </div>
