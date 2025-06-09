@@ -9,6 +9,17 @@ export default function Projects() {
         fetch('/projects.json')
         .then(res => res.json())
         .then(setProjects);
+
+        if ('scrollRestoration' in window.history) {
+            window.history.scrollRestoration = 'manual';
+        }
+        const y = sessionStorage.getItem('scrollY');
+        if (y !== null) {
+            setTimeout(() => {
+            window.scrollTo({ top: parseInt(y), behavior: 'smooth' });
+            sessionStorage.removeItem('scrollY');
+            }, 100);
+        }
     }, []);
     return (
         <section id="projects" className="m-16">
