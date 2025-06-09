@@ -1,13 +1,15 @@
 [
     {
         "project_name": "Unseen Canvas",
-        "project_link": "N/A",
+        "project_link": "",
         "github_link": "https://github.com/alanakoshi/UnseenCanvas",
         "description": ["A website that promotes BIPOC artists and engage communities through art.", "Unseen Canvas is a website that promotes BIPOC artists and engage communities through art.", "This website was created in a team of 5 using data scraped from various websites and hosted on AWS."],
         "languages": ["CSS", "HTML", "JavaScript", "Python"],
         "toolsAndTech": ["AWS", "Docker", "React"],
         "slug": "unseencanvas",
-        "images":[]
+        "images":[
+            "/project_files/UnseenCanvas/logo.png"
+        ]
     },
     {
         "project_name": "EventHive",
@@ -17,13 +19,15 @@
         "languages": ["CSS", "JavaScript"],
         "toolsAndTech":["Figma", "Firebase", "GitHub", "React", "VS-Code"],
         "slug": "eventhive",
-        "images":[]
+        "images":[
+            "/project_files/EventHive/logo.png"
+        ]
     },
     {
         "project_name": "Dine and Dash",
         "project_link": "https://mayalee393.github.io/wics-2025/",
         "github_link": "https://github.com/MayaLee393/wics-2025",
-        "description": ["A UT dining hall review site.", "Dine and Dash is a UT dining hall review site.", "The website was designed and created in a team of 4 during WICS Hackathon 2025. The design for the app was created on Figma and for the data,the UT dining halls' website was scraped and user reviews were stored using Firebase."],
+        "description": ["A UT dining hall review site.", "Dine and Dash is a UT dining hall review site.", "The website was designed and created in a team of 4 during WICS Hackathon 2025. The design for the app was created on Figma and for the data, the UT dining halls' website was scraped and user reviews were stored using Firebase."],
         "languages": ["CSS", "HTML", "Python"],
         "toolsAndTech":["Figma", "Firebase", "React"],
         "slug": "dineanddash",

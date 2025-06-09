@@ -20,7 +20,7 @@ export default function ProjectCard({project, index}) {
                 )}
             </div>
             <div className="flex flex-col justify-center text-black text-lg p-4 w-full md:w-2/3 xl:p-12 space-y-6 shadow-xl rounded-xl border border-[#c87377]">
-                <div className="text-xl">{project.project_name}</div>
+                <div className="text-xl font-semibold">{project.project_name}</div>
                 <div>{project.description[0]}</div>
                 <Link href={`/projects/${project.slug}`} className="self-start inline-block border rounded-2xl border-[#c87377] bg-[#c87377] text-white hover:scale-110 px-2">Learn more</Link>
             </div>

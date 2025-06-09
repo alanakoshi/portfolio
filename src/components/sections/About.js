@@ -30,9 +30,9 @@ export default function About() {
                 <Image src="/profile.jpg" alt="Profile" width={400} height={400} className="object-cover rounded-xl"/>
                 {/* External Links */}
                 <div className="flex flex-row justify-center gap-2 md:gap-16 mt-6">
-                    <a href="https://www.linkedin.com/in/alanakoshikawa/" className="border rounded-2xl border-[#c87377] px-2 text-xl">LinkedIn</a>
-                    <a href="https://github.com/alanakoshi" className="border rounded-2xl border-[#c87377] px-2 text-xl">GitHub</a>
-                    <a href="/resume.pdf" className="border rounded-2xl border-[#c87377] px-2 text-xl">Resume</a>
+                    <a href="https://www.linkedin.com/in/alanakoshikawa/" className="border rounded-2xl border-[#c87377] px-2 text-xl font-semibold">LinkedIn</a>
+                    <a href="https://github.com/alanakoshi" className="border rounded-2xl border-[#c87377] px-2 text-xl font-semibold">GitHub</a>
+                    <a href="/resume.pdf" className="border rounded-2xl border-[#c87377] px-2 text-xl font-semibold">Resume</a>
                 </div>
                 </div>
                 {/* About Message */}
@@ -55,10 +55,10 @@ export default function About() {
             </div>
             {/* Skills */}
             <div className="flex flex-col m-8">
-                <h1 className="text-2xl">Skills</h1>
-                <h2 className="text-xl mt-4 mb-4">Languages</h2>
+                <h1 className="text-2xl font-semibold">Skills</h1>
+                <h2 className="text-xl mt-4 mb-4 font-semibold">Languages</h2>
                 <SkillsGrid icons={languageIcons}/>
-                <h2 className="text-xl mt-8 mb-4">Tools and Technologies</h2>
+                <h2 className="text-xl mt-8 mb-4 font-semibold">Tools and Technologies</h2>
                 <SkillsGrid icons={toolsAndTechIcons}/>
             </div>
         </section>

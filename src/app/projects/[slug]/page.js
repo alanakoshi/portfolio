@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
+import { HiArrowLeft } from 'react-icons/hi';
 
 export default function ProjectPage() {
     const { slug } = useParams();
@@ -24,14 +25,45 @@ export default function ProjectPage() {
     if (!project)
         return <p>Loading...</p>;
     return(
-        <div>
-            <h1>{project.project_name}</h1>
-            <div>
+        <div className="m-8 mt-20">
+            <div className="md:m-8 space-y-2">
+                <button onClick={() => router.back()} className="flex items-center gap-2 font-semibold text-xl underline cursor-pointer">
+                    <HiArrowLeft className="w-5 h-5" />
+                    Back
+                </button>
+                <h1 className="text-3xl font-bold mb-4 text-center">{project.project_name}</h1>
+            </div>
+            <div className="flex gap-4 overflow-x-auto justify-center">
                 {project.images.map((src, idx) => (
-                    <Image key={idx} src={src} alt="{project_name} image" width={500} height={500}/>
+                <Image
+                    key={idx}
+                    src={src}
+                    alt={`Image ${idx + 1}`}
+                    width={300}
+                    height={300}
+                    className="rounded shadow"
+                />
                 ))}
             </div>
-            
+            <div className="m-8 text-xl space-y-6">
+                <div>{project.description.slice(1).join(' ')}</div>
+                <div className="flex flex-row gap-2">
+                    <div className="font-semibold"> Languages: </div>
+                    <div>{project.languages.join(', ')}</div>
+                </div>
+                <div className="flex flex-row gap-2">
+                    <div className="font-semibold">Tools and Technologies:</div>
+                    <div>{project.toolsAndTech.join(', ')}</div>
+                </div>
+                <div>
+                    {project.project_link && (
+                        <a href={project.project_link} className="underline font-semibold">Website</a>
+                    )}
+                </div>
+                <div>
+                    <a href={project.github_link} className="underline font-semibold">GitHub</a>
+                </div>
+            </div>
         </div>
     )
 }

@@ -13,7 +13,7 @@ export default function NavBar() {
             </div>
 
             {/* Desktop View */}
-            <div className='hidden md:flex gap-6'>
+            <div className='hidden md:flex gap-6 font-semibold'>
                 <Link href="/">Home</Link>
                 <Link href="#about">About</Link>
                 <Link href="#projects">Projects</Link>
