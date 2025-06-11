@@ -7,7 +7,7 @@ export default function ProjectCard({project, index}) {
     const imageCover = project.images?.[0] || null;
 
     return (
-        <div className={`flex flex-col md:flex-row ${isEven ? '' : 'md:flex-row-reverse'} items-center md:justify-between md:gap-24 gap-12 m-8 items-stretch`}>
+        <div className={`flex flex-col md:flex-row ${isEven ? '' : 'md:flex-row-reverse'} items-center md:justify-between md:gap-24 gap-12 mt-8 mb-8 items-stretch`}>
             <div className=" flex items-center justify-center">
                 {imageCover && (
                     <Image 
@@ -22,7 +22,7 @@ export default function ProjectCard({project, index}) {
             <div className="flex flex-col justify-center text-black text-lg p-4 w-full md:w-2/3 xl:p-12 space-y-6 shadow-xl rounded-xl border border-[#c87377]">
                 <div className="text-xl font-semibold">{project.project_name}</div>
                 <div>{project.description[0]}</div>
-                <Link href={`/projects/${project.slug}`} onClick={() => {sessionStorage.setItem('scrollY', window.scrollY);}} className="self-start inline-block border rounded-2xl border-[#c87377] bg-[#c87377] text-white hover:scale-110 px-2">Learn more</Link>
+                <Link href={`/projects/${project.slug}`} onClick={() => {sessionStorage.setItem('scrollY', window.scrollY);}} className="self-start inline-block border rounded-2xl border-[#c87377] bg-[#c87377] text-white font-semibold hover:scale-110 px-2">Learn more</Link>
             </div>
         </div>
     )

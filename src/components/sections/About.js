@@ -29,10 +29,10 @@ export default function About() {
                 <div className="flex flex-col items-center relative m-8 overflow-hidden rounded-xl">
                 <Image src="/profile.jpg" alt="Profile" width={400} height={400} className="object-cover rounded-xl"/>
                 {/* External Links */}
-                <div className="flex flex-row justify-center gap-2 md:gap-16 mt-6">
-                    <a href="https://www.linkedin.com/in/alanakoshikawa/" className="border rounded-2xl border-[#c87377] px-2 text-xl font-semibold">LinkedIn</a>
-                    <a href="https://github.com/alanakoshi" className="border rounded-2xl border-[#c87377] px-2 text-xl font-semibold">GitHub</a>
-                    <a href="/resume.pdf" className="border rounded-2xl border-[#c87377] px-2 text-xl font-semibold">Resume</a>
+                <div className="flex flex-row justify-center gap-2 md:gap-16 mt-6 m-2">
+                    <a href="https://www.linkedin.com/in/alanakoshikawa/" className="border rounded-2xl border-[#c87377] bg-[#c87377] text-white hover:scale-110 px-2 md:text-xl font-semibold">LinkedIn</a>
+                    <a href="https://github.com/alanakoshi" className="border rounded-2xl border-[#c87377] bg-[#c87377] text-white hover:scale-110 px-2 md:text-xl font-semibold">GitHub</a>
+                    <a href="/resume.pdf" className="border rounded-2xl border-[#c87377] bg-[#c87377] text-white hover:scale-110 px-2 md:text-xl font-semibold">Resume</a>
                 </div>
                 </div>
                 {/* About Message */}

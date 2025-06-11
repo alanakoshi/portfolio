@@ -26,18 +26,16 @@ export default function ProjectPage() {
         return <p>Loading...</p>;
 
     function handleBack() {
-        const y = sessionStorage.getItem('scrollY');
-        router.push('/#projects');
-        setTimeout(() => {
-            window.scrollTo({top: y ? parseInt(y) : 0, behavior: 'smooth'});
-        }, 50);
+        sessionStorage.setItem('scrollTo', 'projects');
+        router.push('/');
     }
+
     return(
         <div className="m-8 mt-20">
             <div className="md:m-8 space-y-2">
                 <button onClick={handleBack} className="flex items-center gap-2 font-semibold text-xl underline cursor-pointer">
                     <HiArrowLeft className="w-5 h-5" />
-                    Back
+                    Projects
                 </button>
                 <h1 className="text-3xl font-bold mb-4 text-center">{project.project_name}</h1>
             </div>
