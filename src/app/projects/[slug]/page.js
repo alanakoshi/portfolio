@@ -1,8 +1,8 @@
 'use client'
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import Image from "next/image";
 import { HiArrowLeft } from 'react-icons/hi';
+import Carousel from "@/components/Carousel";
 
 export default function ProjectPage() {
     const { slug } = useParams();
@@ -39,18 +39,7 @@ export default function ProjectPage() {
                 </button>
                 <h1 className="text-3xl font-bold mb-4 text-center">{project.project_name}</h1>
             </div>
-            <div className="flex gap-4 overflow-x-auto justify-center">
-                {project.images.map((src, idx) => (
-                <Image
-                    key={idx}
-                    src={src}
-                    alt={`Image ${idx + 1}`}
-                    width={300}
-                    height={300}
-                    className="rounded shadow"
-                />
-                ))}
-            </div>
+            <Carousel images={project.images}/>
             <div className="m-8 text-xl space-y-6">
                 <div>{project.description.slice(1).join(' ')}</div>
                 <div className="flex flex-row gap-2">

@@ -35,9 +35,9 @@ export default function NavBar() {
                 <>
                     {/* Dark Overlay */}
                     <div className='fixed top-16 inset-0 bg-black/40 z-40' onClick={() => setIsOpen(false)}></div>
-                    <div className='md:hidden absolute left-0 mt-12 w-full bg-[#c87377] transition-all duration-300 z-50'>
-                        <div className='h-px bg-white'/>
-                        <div className='flex flex-col p-4 ml-4 gap-4'>
+                    <div className='md:hidden absolute left-0 mt-11.5 w-full bg-[#c87377] transition-all duration-300 z-50'>
+                        <div className='h-[2px] bg-white'/>
+                        <div className='flex flex-col p-4 ml-4 gap-4 font-semibold'>
                             <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
                             <Link href="/#about" onClick={() => setIsOpen(false)}>About</Link>
                             <Link href="/#projects" onClick={() => {setIsOpen(false); handleProject();}}>Projects</Link>

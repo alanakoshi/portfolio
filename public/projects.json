@@ -33,7 +33,13 @@
         "slug": "dineanddash",
         "images":[
             "/project_files/DineAndDash/logo.png",
-            "/project_files/DineAndDash/design.png"]
+            "/project_files/DineAndDash/loading screen.png",
+            "/project_files/DineAndDash/dining hall page.png",
+            "/project_files/DineAndDash/food page.png",
+            "/project_files/DineAndDash/food details page.png",
+            "/project_files/DineAndDash/nutrition page.png",
+            "/project_files/DineAndDash/review suggestion.png"
+        ]
     },
     {
         "project_name": "Cornstructopia",
