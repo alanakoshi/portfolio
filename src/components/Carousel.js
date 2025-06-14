@@ -7,8 +7,6 @@ const getSrc = (item) => {
     return typeof item === 'string' ? item : item.src;
 };
 
-const isVideo = (src) => /\.(mp4|webm|ogg)$/i.test(src);
-
 const getCaption = (item) => {
     if (!item) return '';
     const src = getSrc(item);
@@ -25,13 +23,7 @@ export default function Carousel({ images = [] }) {
 
     const renderMedia = (item, className) => {
         const src = getSrc(item);
-        return isVideo(src) ? (
-            <video
-                src={src}
-                controls
-                className={`${className} object-contain transition-all duration-500 ease-in-out transform-gpu`}
-            />
-        ) : (
+        return (
             <img
                 src={src}
                 className={`${className} object-contain transition-all duration-500 ease-in-out transform-gpu`}

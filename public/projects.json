@@ -8,7 +8,21 @@
         "toolsAndTech": ["AWS", "Docker", "React"],
         "slug": "unseencanvas",
         "images":[
-            "/project_files/UnseenCanvas/logo.png"
+            "/project_files/UnseenCanvas/logo.png",
+            "/project_files/UnseenCanvas/landing page.png",
+            "/project_files/UnseenCanvas/artists page.png",
+            "/project_files/UnseenCanvas/artists instance.png",
+            "/project_files/UnseenCanvas/artworks page.png",
+            "/project_files/UnseenCanvas/artworks instance.png",
+            "/project_files/UnseenCanvas/events page.png",
+            "/project_files/UnseenCanvas/events instance.png",
+            "/project_files/UnseenCanvas/about page 1-1.png",
+            "/project_files/UnseenCanvas/about page 1-2.png",
+            "/project_files/UnseenCanvas/visualization 1-1.png",
+            "/project_files/UnseenCanvas/visualization 1-2.png",
+            "/project_files/UnseenCanvas/visualization 2-1.png",
+            "/project_files/UnseenCanvas/visualization 2-2.png",
+            "/project_files/UnseenCanvas/main search.png"
         ]
     },
     {
@@ -20,7 +34,26 @@
         "toolsAndTech":["Figma", "Firebase", "GitHub", "React", "VS-Code"],
         "slug": "eventhive",
         "images":[
-            "/project_files/EventHive/logo.png"
+            "/project_files/EventHive/logo.png",
+            "/project_files/EventHive/sign up.png",
+            "/project_files/EventHive/login.png",
+            "/project_files/EventHive/events 1-1.png",
+            "/project_files/EventHive/events 1-2.png",
+            "/project_files/EventHive/settings.png",
+            "/project_files/EventHive/event name - host.png",
+            "/project_files/EventHive/event name - cohost.png",
+            "/project_files/EventHive/invite cohost - host.png",
+            "/project_files/EventHive/invite cohost - cohost.png",
+            "/project_files/EventHive/date.png",
+            "/project_files/EventHive/theme.png",
+            "/project_files/EventHive/venue.png",
+            "/project_files/EventHive/voting 1-1.png",
+            "/project_files/EventHive/voting 1-2.png",
+            "/project_files/EventHive/rankings 1-1.png",
+            "/project_files/EventHive/rankings 1-2.png",
+            "/project_files/EventHive/tasks - host.png",
+            "/project_files/EventHive/tasks - cohost.png",
+            "/project_files/EventHive/complete.png"
         ]
     },
     {
@@ -50,7 +83,10 @@
         "toolsAndTech":["Unity", "Vercel"],
         "slug": "cornstructopia",
         "images":[
-            "/project_files/Cornstructopia/cover.png"
+            "/project_files/Cornstructopia/cover.png",
+            "/project_files/Cornstructopia/home.png",
+            "/project_files/Cornstructopia/how to play.png",
+            "/project_files/Cornstructopia/about.png"
         ]
     }
 ]
