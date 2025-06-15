@@ -11,7 +11,7 @@ export default function NavBar() {
     };
 
     return (
-        <nav className="flex fixed top-0 justify-between p-4 px-8 md:px-16 w-full z-50 text-xl text-white bg-[#c87377] items-stretch">
+        <nav className="flex fixed top-0 justify-between p-4 px-8 md:px-16 w-full z-50 text-2xl text-white bg-[#c87377] items-stretch">
             <div>
                 <Link href="/" className='font-bold'>Alana Koshikawa</Link>
             </div>
