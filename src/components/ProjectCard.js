@@ -7,8 +7,8 @@ export default function ProjectCard({project, index}) {
     const imageCover = project.images?.[0] || null;
 
     return (
-        <div className={`flex flex-col md:flex-row ${isEven ? '' : 'md:flex-row-reverse'} items-center md:justify-between md:gap-24 gap-12 mt-8 mb-8 items-stretch`}>
-            <div className=" flex items-center justify-center">
+        <div className={`flex flex-col md:flex-row ${isEven ? '' : 'md:flex-row-reverse'} items-center gap-12 mt-8 mb-8 items-stretch`}>
+            <div className="flex md:flex-1 items-center justify-center">
                 {imageCover && (
                     <Image 
                         src={project.images[0]} 

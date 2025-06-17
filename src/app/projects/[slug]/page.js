@@ -42,11 +42,11 @@ export default function ProjectPage() {
             <Carousel images={project.images}/>
             <div className="m-8 text-xl space-y-6">
                 <div>{project.description.slice(1).join(' ')}</div>
-                <div className="flex flex-row gap-2">
+                <div className="flex flex-col md:flex-row gap-2">
                     <div className="font-semibold"> Languages: </div>
                     <div>{project.languages.join(', ')}</div>
                 </div>
-                <div className="flex flex-row gap-2">
+                <div className="flex flex-col md:flex-row gap-2">
                     <div className="font-semibold">Tools and Technologies:</div>
                     <div>{project.toolsAndTech.join(', ')}</div>
                 </div>

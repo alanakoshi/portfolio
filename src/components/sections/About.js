@@ -17,13 +17,14 @@ export default function About() {
         {src: 'icons/figma.svg', alt: 'Figma'},
         {src: 'icons/firebase.svg', alt: 'Firebase'},
         {src: 'icons/github.svg', alt: 'GitHub'},
+        {src: 'icons/next.svg', alt: 'Next'},
         {src: 'icons/react.svg', alt: 'React'},
         {src: 'icons/vercel.svg', alt: 'Vercel'},
         {src: 'icons/vs-code.svg', alt: 'VS-Code'},
     ]
 
     return (
-        <section id="about" className="mt-24">
+        <section id="about" className="mt-24" style={{scrollMarginTop: '6rem'}}>
             <div className="flex flex-col md:flex-row items-center m-8 justify-center items-stretch ">
                 {/* Profile */}
                 <div className="flex flex-col items-center relative m-8 overflow-hidden rounded-xl">
@@ -36,26 +37,26 @@ export default function About() {
                     </div>
                 </div>
                 {/* About Message */}
-                <div className="flex flex-col justify-center items-center mx-8 mb-8 md:my-8 text-black text-lg p-4 md:w-1/2 xl:p-12 space-y-6 shadow-xl rounded-xl border border-[#c87377]">
-                <p>
-                    Hi, I’m Alana Koshikawa! I am an upcoming senior 
-                    at the University of Texas at Austin, majoring in
-                    Computer Science with a minor in Business. 
-                </p>
-                <p>
-                    I’m passionate about designing and building
-                    intuitive, meaningful, and visually engaging apps,
-                    as well as developing programs that automate tasks
-                    and analyze data. In my free time, I enjoy exploring,
-                    understanding, and experimenting with new technologies.
-                    I also love creative, hands-on activities like crocheting,
-                    baking, painting, and building models.
-                </p>
+                <div className="flex flex-col justify-center items-center mx-8 mb-8 md:my-8 text-black text-lg md:text-xl p-4 md:w-1/2  xl:p-24 space-y-6 shadow-xl rounded-xl border border-[#c87377]">
+                    <p>
+                        Hi, I’m Alana Koshikawa! I am an upcoming senior 
+                        at the University of Texas at Austin, majoring in
+                        Computer Science with a minor in Business. 
+                    </p>
+                    <p>
+                        I’m passionate about designing and building
+                        intuitive, meaningful, and visually engaging apps,
+                        as well as developing programs that automate tasks
+                        and analyze data. In my free time, I enjoy exploring,
+                        understanding, and experimenting with new technologies.
+                        I also love creative, hands-on activities like crocheting,
+                        baking, painting, and building models.
+                    </p>
                 </div>
             </div>
             {/* Skills */}
             <div className="w-full flex flex-col p-16 mt-8 bg-[rgba(200,115,119,0.2)]">
-                <h1 className="text-2xl font-semibold">Skills</h1>
+                <h1 className="text-2xl font-bold">Skills</h1>
                 <h2 className="text-xl mt-4 mb-4 font-semibold">Languages</h2>
                 <SkillsGrid icons={languageIcons}/>
                 <h2 className="text-xl mt-8 mb-4 font-semibold">Tools and Technologies</h2>

@@ -12,8 +12,8 @@ export default function Projects() {
     }, []);
     
     return (
-        <section id="projects" className="m-16">
-            <h1 className="text-2xl font-semibold">Projects</h1>
+        <section id="projects" className="m-16" style={{scrollMarginTop: '8rem'}}>
+            <h1 className="text-2xl font-bold">Projects</h1>
             <div className="flex flex-col">
                 {projects.map((project, index) => (
                     <ProjectCard key={index} project={project} index={index}/>

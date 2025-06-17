@@ -33,9 +33,9 @@ export default function Carousel({ images = [] }) {
 
     return (
         <div className="">
-            <div className="flex justify-center items-center h-[350px]">
+            <div className="relative overflow-hidden flex justify-center items-center h-[350px]">
                 {slides.length > 1 && (
-                    <div className="text-white p-1 inline-block rounded-xl bg-[#c87377] hover:scale-120 select-none" onClick={prev}>
+                    <div className="text-white p-1 inline-block rounded-xl bg-[#c87377] hover:scale-120 select-none z-30" onClick={prev}>
                         <HiArrowLeft/>
                     </div>
                 )}
@@ -46,10 +46,9 @@ export default function Carousel({ images = [] }) {
                             const slide = getSlide(i);
                             if (!slide) return null;
                             const isCenter = idx === 1;
-                            const isSide = idx != 1;
 
                             return (
-                                <div key={i} className={`transition-all duration-500 ease-in-out ${isCenter ? 'scale-120 z-20' : 'scale-110 opacity-70 z-10'} transform-gpu`}>
+                                <div key={i} className={`transition-all duration-500 ease-in-out mx-[-1rem] ${isCenter ? 'scale-120 z-20' : 'scale-90 opacity-70 z-10'} transform-gpu`}>
                                     {renderMedia(slide, isCenter ? 'h-72 w-auto' : 'h-60 w-auto')}
                                 </div>
                             )
@@ -57,7 +56,7 @@ export default function Carousel({ images = [] }) {
                     </div>
                 </div>
                 {images.length > 1 && (
-                    <div className="text-white p-1 inline-block rounded-xl bg-[#c87377] hover:scale-120 select-none" onClick={next}>
+                    <div className="text-white p-1 inline-block rounded-xl bg-[#c87377] hover:scale-120 select-none z-30" onClick={next}>
                         <HiArrowRight/>
                     </div>
                 )}
@@ -67,10 +66,6 @@ export default function Carousel({ images = [] }) {
                     {getCaption(getSlide(index))} 
                 </div>
             )}
-            {/* dots */}
-            <div>
-
-            </div>
         </div>
     )
 }
