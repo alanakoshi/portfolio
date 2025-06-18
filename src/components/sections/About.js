@@ -37,7 +37,7 @@ export default function About() {
                     </div>
                 </div>
                 {/* About Message */}
-                <div className="flex flex-col justify-center items-center mx-8 mb-8 md:my-8 text-black text-lg md:text-xl p-4 md:w-1/2  xl:p-24 space-y-6 shadow-xl rounded-xl border border-[#c87377]">
+                <div className="flex flex-col justify-center items-center mx-8 mb-8 md:my-8 text-black text-lg md:text-xl p-4 md:w-1/2 xl:p-16 2xl:p-24 space-y-6 shadow-xl rounded-xl border border-[#c87377]">
                     <p>
                         Hi, I’m Alana Koshikawa! I am an upcoming senior 
                         at the University of Texas at Austin, majoring in
