@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { HiArrowLeft, HiArrowRight } from 'react-icons/hi';
 
 const getSrc = (item) => {
@@ -17,6 +17,7 @@ export default function Carousel({ images = [] }) {
     const [index, setIndex] = useState(0);
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [lightboxIndex, setLightboxIndex] = useState(0);
+    const [landscapeMap, setLandscapeMap] = useState({});
 
     const slides = images.length > 1 ? images.slice(1) : images;
 
@@ -25,11 +26,18 @@ export default function Carousel({ images = [] }) {
 
     const getSlide = (i) => slides.length ? slides[(i + slides.length) % slides.length] : null;
 
-    const renderMedia = (item, className, idx = 0) => {
+    const handleLoad = (idx, e) => {
+        const img = e.target;
+        const isLandscape = img.naturalWidth > img.naturalHeight;
+        setLandscapeMap(prev => ({ ...prev, [idx]: isLandscape }));
+    }
+
+    const renderMedia = (item, className, idx) => {
         const src = getSrc(item);
         return (
             <img
                 src={src}
+                onLoad={(e) => handleLoad(idx, e)}
                 className={`${className} object-contain transition-all duration-500 ease-in-out transform-gpu cursor-zoom-in`}
                 onClick={() => {
                     setLightboxIndex(idx);
@@ -54,9 +62,11 @@ export default function Carousel({ images = [] }) {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [lightboxIndex, slides.length]);
 
+    const isCurrentLandscape = landscapeMap[index];
+    
     return (
-        <div className="">
-            <div className="relative overflow-hidden flex justify-center items-center h-[350px]">
+        <div>
+            <div className={`relative overflow-hidden flex justify-center items-center ${isCurrentLandscape ? 'h-[200px] sm:h-[350px]': 'h-350px'}`}>
                 {slides.length > 1 && (
                     <div className="text-white p-1 m-1 inline-block rounded-xl bg-[#c87377] hover:scale-120 select-none z-30" onClick={prev}>
                         <HiArrowLeft/>
@@ -66,13 +76,15 @@ export default function Carousel({ images = [] }) {
                 <div className="m-2 md:m-8">
                     <div className="flex transition-transform justify-center items-center transition-all duration-500 ease-in-out">
                         {[index - 1, index, index + 1].map((i, idx) => {
+                            const slideIndex = (i + slides.length) % slides.length;
                             const slide = getSlide(i);
                             if (!slide) return null;
                             const isCenter = idx === 1;
+                            const isLandscape = landscapeMap[slideIndex];
 
                             return (
-                                <div key={i} className={`transition-all duration-500 ease-in-out mx-[-1rem] ${isCenter ? 'scale-120 z-20' : 'scale-90 opacity-70 z-10'} transform-gpu`}>
-                                    {renderMedia(slide, isCenter ? 'h-72 w-auto' : 'h-60 w-auto')}
+                                <div key={slideIndex} className={`transition-all duration-500 ease-in-out ${isLandscape ? 'mx-[-3rem]' : 'mx-[-1rem]'} ${isCenter ? 'scale-120 z-20' : 'scale-90 opacity-70 z-10'} transform-gpu`}>
+                                    {renderMedia(slide, isCenter ? 'h-72 w-auto' : 'h-60 w-auto', slideIndex)}
                                 </div>
                             )
                         })}
