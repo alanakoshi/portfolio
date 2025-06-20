@@ -3,24 +3,24 @@ import SkillsGrid from "../SkillsGrid"
 
 export default function About() {
     const languageIcons = [
-        {src: 'icons/c.svg', alt: 'C'},
-        {src: 'icons/css.svg', alt: 'CSS'},
-        {src: 'icons/html.svg', alt: 'HTML'},
-        {src: 'icons/java.svg', alt: 'Java'},
-        {src: 'icons/javascript.svg', alt: 'JavaScript'},
-        {src: 'icons/python.svg', alt: 'Python'},
-        {src: 'icons/rust.svg', alt: 'Rust'},
+        {src: '/icons/c.svg', alt: 'C'},
+        {src: '/icons/css.svg', alt: 'CSS'},
+        {src: '/icons/html.svg', alt: 'HTML'},
+        {src: '/icons/java.svg', alt: 'Java'},
+        {src: '/icons/javascript.svg', alt: 'JavaScript'},
+        {src: '/icons/python.svg', alt: 'Python'},
+        {src: '/icons/rust.svg', alt: 'Rust'},
     ]
     const toolsAndTechIcons = [
-        {src: 'icons/aws.svg', alt: 'AWS'},
-        {src: 'icons/docker.svg', alt: 'Docker'},
-        {src: 'icons/figma.svg', alt: 'Figma'},
-        {src: 'icons/firebase.svg', alt: 'Firebase'},
-        {src: 'icons/github.svg', alt: 'GitHub'},
-        {src: 'icons/next.svg', alt: 'Next'},
-        {src: 'icons/react.svg', alt: 'React'},
-        {src: 'icons/vercel.svg', alt: 'Vercel'},
-        {src: 'icons/vs-code.svg', alt: 'VS-Code'},
+        {src: '/icons/aws.svg', alt: 'AWS'},
+        {src: '/icons/docker.svg', alt: 'Docker'},
+        {src: '/icons/figma.svg', alt: 'Figma'},
+        {src: '/icons/firebase.svg', alt: 'Firebase'},
+        {src: '/icons/github.svg', alt: 'GitHub'},
+        {src: '/icons/next.svg', alt: 'Next'},
+        {src: '/icons/react.svg', alt: 'React'},
+        {src: '/icons/vercel.svg', alt: 'Vercel'},
+        {src: '/icons/vs-code.svg', alt: 'VS-Code'},
     ]
 
     return (

@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import { HiArrowLeft, HiArrowRight } from 'react-icons/hi';
 
 const getSrc = (item) => {
@@ -63,7 +63,7 @@ export default function Carousel({ images = [] }) {
     }, [lightboxIndex, slides.length]);
 
     const isCurrentLandscape = landscapeMap[index];
-    
+
     return (
         <div>
             <div className={`relative overflow-hidden flex justify-center items-center ${isCurrentLandscape ? 'h-[200px] sm:h-[350px]': 'h-350px'}`}>

@@ -14,10 +14,12 @@ export default function ProjectPage() {
             const res = await fetch('/projects.json');
             const data = await res.json();
             const found = data.find((p) => p.slug === slug);
-            if (found)
+            if (found) {
+                found.descriptionText = found.description?.slice(1).join(' ') ?? '';
                 setProject(found);
-            else
+            } else {
                 router.push('/404');
+            }
         }
         loadProject();
     }, [slug]);
@@ -41,7 +43,7 @@ export default function ProjectPage() {
             </div>
             <Carousel images={project.images}/>
             <div className="m-8 text-xl space-y-6">
-                <div>{project.description.slice(1).join(' ')}</div>
+                <div>{project.descriptionText}</div>
                 <div className="flex flex-col md:flex-row gap-2">
                     <div className="font-semibold"> Languages: </div>
                     <div>{project.languages.join(', ')}</div>
