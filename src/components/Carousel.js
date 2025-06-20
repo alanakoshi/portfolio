@@ -66,7 +66,7 @@ export default function Carousel({ images = [] }) {
 
     return (
         <div>
-            <div className={`relative overflow-hidden flex justify-center items-center ${isCurrentLandscape ? 'h-[200px] sm:h-[350px]': 'h-350px'}`}>
+            <div className={`relative overflow-hidden flex justify-center items-center ${isCurrentLandscape ? 'h-[200px] sm:h-[350px]': 'h-[350px]'}`}>
                 {slides.length > 1 && (
                     <div className="text-white p-1 m-1 inline-block rounded-xl bg-[#c87377] hover:scale-120 select-none z-30" onClick={prev}>
                         <HiArrowLeft/>
