@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from "react"
 import { HiArrowLeft, HiArrowRight } from 'react-icons/hi';
+import { motion } from 'framer-motion'
 
 const getSrc = (item) => {
     if (!item) return '';
@@ -18,6 +19,7 @@ export default function Carousel({ images = [] }) {
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [lightboxIndex, setLightboxIndex] = useState(0);
     const [landscapeMap, setLandscapeMap] = useState({});
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
 
     const slides = images.length > 1 ? images.slice(1) : images;
 
@@ -62,40 +64,54 @@ export default function Carousel({ images = [] }) {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [lightboxIndex, slides.length]);
 
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsSmallScreen(window.innerWidth < 640);
+        };
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
+
     const isCurrentLandscape = landscapeMap[index];
 
     return (
-        <div>
-            <div className={`relative overflow-hidden flex justify-center items-center ${isCurrentLandscape ? 'h-[200px] sm:h-[350px]': 'h-[350px]'}`}>
+        <div className="sm:m-8">
+            <div className={`relative overflow-hidden flex justify-center items-center ${isCurrentLandscape ? 'h-[200px] sm:h-[375px]': isSmallScreen ? 'h-[300px]' : 'h-[450px]'}`}>
                 {slides.length > 1 && (
-                    <div className="text-white p-1 m-1 inline-block rounded-xl bg-[#c87377] hover:scale-120 select-none z-30" onClick={prev}>
+                    <div className="text-white p-1 m-1 inline-block rounded-xl bg-[#c87377] hover:scale-120 select-none z-40" onClick={prev}>
                         <HiArrowLeft/>
                     </div>
                 )}
                 {/* Carousel */}
-                <div className="m-2 md:m-8">
-                    <div className="flex transition-transform justify-center items-center transition-all duration-500 ease-in-out">
-                        {[index - 1, index, index + 1].map((i, idx) => {
-                            const slideIndex = (i + slides.length) % slides.length;
-                            const slide = getSlide(i);
-                            if (!slide) return null;
-                            const isCenter = idx === 1;
-                            const isLandscape = landscapeMap[slideIndex];
+                <div className="flex justify-center items-center">
+                    {[-1, 0, 1].map((offset) => {
+                        const slideIndex = (index + offset + slides.length) % slides.length;
+                        const isCenter = offset === 0;
 
-                            return (
-                                <div key={slideIndex} className={`transition-all duration-500 ease-in-out ${isLandscape ? 'mx-[-3rem]' : 'mx-[-1rem]'} ${isCenter ? 'scale-120 z-20' : 'scale-90 opacity-70 z-10'} transform-gpu`}>
-                                    {renderMedia(slide, isCenter ? 'h-72 w-auto' : 'h-60 w-auto', slideIndex)}
-                                </div>
-                            )
-                        })}
-                    </div>
+                        return (
+                            <motion.div
+                                key={slideIndex}
+                                animate={{
+                                    scale: isCenter ? (isSmallScreen & landscapeMap[slideIndex] ? 1.1 : 1.5) : 1,
+                                    opacity: isCenter ? 1: 0.6,
+                                    zIndex: isCenter ? 30 : 10,
+                                }}
+                                transition={{ duration: 0.5, ease: 'easeInOut'}}
+                                className={`transform-gpu ${isCurrentLandscape ? isSmallScreen ? 'mx-[-4rem]': '' : ''}`}
+                            >
+                                {renderMedia(getSlide(slideIndex), landscapeMap[slideIndex] ? 'h-60' : 'h-72', slideIndex)}
+                            </motion.div>
+                        );
+                    })}
                 </div>
-                {images.length > 1 && (
-                    <div className="text-white p-1 m-1 inline-block rounded-xl bg-[#c87377] hover:scale-120 select-none z-30" onClick={next}>
+                {slides.length > 1 && (
+                    <div className="text-white p-1 m-1 inline-block rounded-xl bg-[#c87377] hover:scale-120 select-none z-40" onClick={next}>
                         <HiArrowRight/>
                     </div>
                 )}
             </div>
+            
             {slides.length > 1 && (
                 <div className="text-center italic">
                     {getCaption(getSlide(index))} 
@@ -104,45 +120,44 @@ export default function Carousel({ images = [] }) {
 
             {/* Lightbox*/}
             {lightboxOpen && (
-            <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
-                <button
-                    className="absolute top-4 right-4 text-white text-4xl z-50 p-2 hover:scale-110"
-                    onClick={() => setLightboxOpen(false)}
-                >
-                    &times;
-                </button>
-                <div>
-                    <img
-                        src={getSrc(getSlide(lightboxIndex))}
-                        className="max-w-[90vw] max-h-[80vh] object-contain shadow-lg"
-                    />
-                    <div className="flex justify-center items-center">
-                        <button
-                            className="text-white text-2xl z-50 p-2 hover:scale-110 select-none"
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                setLightboxIndex((lightboxIndex - 1 + slides.length) % slides.length);
-                            }}>
-                            <HiArrowLeft/>
-                        </button>
-                        {slides.length > 1 && (
-                            <div className="text-center text-white italic p-2">
-                                {getCaption(getSlide(lightboxIndex))} 
-                            </div>
-                        )}
-                        <button
-                            className="text-white text-2xl z-50 p-2 hover:scale-110 select-none"
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                setLightboxIndex((lightboxIndex + 1) % slides.length);
-                            }}>
-                            <HiArrowRight/>
-                        </button>
+                <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
+                    <button
+                        className="absolute top-4 right-4 text-white text-4xl z-50 p-2 hover:scale-110"
+                        onClick={() => setLightboxOpen(false)}
+                    >
+                        &times;
+                    </button>
+                    <div className="flex flex-col">
+                        <img
+                            src={getSrc(getSlide(lightboxIndex))}
+                            className="max-w-[90vw] max-h-[80vh] object-contain shadow-lg"
+                        />
+                        <div className="flex justify-center items-center">
+                            <button
+                                className="text-white text-2xl z-50 p-2 hover:scale-110 select-none"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setLightboxIndex((lightboxIndex - 1 + slides.length) % slides.length);
+                                }}>
+                                <HiArrowLeft/>
+                            </button>
+                            {slides.length > 1 && (
+                                <div className="text-center text-white italic p-2">
+                                    {getCaption(getSlide(lightboxIndex))} 
+                                </div>
+                            )}
+                            <button
+                                className="text-white text-2xl z-50 p-2 hover:scale-110 select-none"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setLightboxIndex((lightboxIndex + 1) % slides.length);
+                                }}>
+                                <HiArrowRight/>
+                            </button>
+                        </div>
                     </div>
-                    
                 </div>
-            </div>
-        )}
+            )}
         </div>
     )
 }
