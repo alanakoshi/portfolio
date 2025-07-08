@@ -2,6 +2,7 @@
     {
         "project_name": "Unseen Canvas",
         "project_link": "",
+        "project_demo": "https://drive.google.com/file/d/1pIld4OJ7r5NC6ZGhIS8Qa5IB7JnzOfL4/view?usp=sharing",
         "github_link": "https://github.com/alanakoshi/UnseenCanvas",
         "description": ["A website that promotes BIPOC artists and engage communities through art.", "Unseen Canvas is a website that promotes BIPOC artists and engage communities through art.", "This website was created in a team of 5 using data scraped from various websites and hosted on AWS."],
         "languages": ["CSS", "HTML", "JavaScript", "Python"],
@@ -28,6 +29,7 @@
     {
         "project_name": "EventHive",
         "project_link": "https://alanakoshi.github.io/EventHive/",
+        "project_demo": "",
         "github_link": "https://github.com/alanakoshi/EventHive",
         "description": ["A real-time collaborative event planning app.", "EventHive is a real-time collaborative event planning app.", "This app was created in a team of 3 and consisted of three phases: design, prototype, and evaluate. During the design and prototype phases, we conducted needfinding and created multiple prototypes including lo-fi paper prototypes and a hi-fi Figma prototype. During the evaluation phase, the team conducted A/B testing on the voting interface of the app, compared user experience for click and vote vs drag and rank. In our app, we use Firebase for user authentication and data storage."],
         "languages": ["CSS", "JavaScript"],
@@ -59,6 +61,7 @@
     {
         "project_name": "Dine and Dash",
         "project_link": "https://mayalee393.github.io/wics-2025/",
+        "project_demo": "",
         "github_link": "https://github.com/MayaLee393/wics-2025",
         "description": ["A UT dining hall review site.", "Dine and Dash is a UT dining hall review site.", "The website was designed and created in a team of 4 during WICS Hackathon 2025. The design for the app was created on Figma and for the data, the UT dining halls' website was scraped and user reviews were stored using Firebase."],
         "languages": ["CSS", "HTML", "Python"],
@@ -77,6 +80,7 @@
     {
         "project_name": "Cornstructopia",
         "project_link": "https://constructopia-cch3o88mv-alana-koshikawas-projects.vercel.app/",
+        "project_demo": "",
         "github_link": "https://github.com/alanakoshi/Cornstructopia",
         "description": ["A website that promotes healthy habits for construction workers.", "Cornstructopia is a website that promotes healthy habits for construction workers.", "This website features a Unity game and was made with a partner during HackTX 2023."],
         "languages": ["CSS", "HTML"],

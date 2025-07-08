@@ -58,6 +58,11 @@ export default function ProjectPage() {
                     )}
                 </div>
                 <div>
+                    {project.project_demo && (
+                        <a href={project.project_demo} className="underline font-semibold">Demo</a>
+                    )}
+                </div>
+                <div>
                     <a href={project.github_link} className="underline font-semibold">GitHub</a>
                 </div>
             </div>

@@ -3,24 +3,32 @@ import SkillsGrid from "../SkillsGrid"
 
 export default function About() {
     const languageIcons = [
-        {src: '/icons/c.svg', alt: 'C'},
-        {src: '/icons/css.svg', alt: 'CSS'},
-        {src: '/icons/html.svg', alt: 'HTML'},
-        {src: '/icons/java.svg', alt: 'Java'},
-        {src: '/icons/javascript.svg', alt: 'JavaScript'},
+        {src: '/icons/java.png', alt: 'Java'},
         {src: '/icons/python.svg', alt: 'Python'},
+        {src: '/icons/c.svg', alt: 'C'},
+        {src: '/icons/javascript.svg', alt: 'JavaScript'},
+        {src: '/icons/html.svg', alt: 'HTML'},
+        {src: '/icons/css.svg', alt: 'CSS'},
         {src: '/icons/rust.svg', alt: 'Rust'},
+        {src: '/icons/sql.png', alt: 'SQL'}
     ]
-    const toolsAndTechIcons = [
-        {src: '/icons/aws.svg', alt: 'AWS'},
-        {src: '/icons/docker.svg', alt: 'Docker'},
-        {src: '/icons/figma.svg', alt: 'Figma'},
-        {src: '/icons/firebase.svg', alt: 'Firebase'},
-        {src: '/icons/github.svg', alt: 'GitHub'},
-        {src: '/icons/next.svg', alt: 'Next'},
+
+    const frameAndLibIcons = [
         {src: '/icons/react.svg', alt: 'React'},
+        {src: '/icons/next.svg', alt: 'Next.js'},
+        {src: '/icons/tailwind css.svg', alt: 'Tailwind CSS'},
+        {src: '/icons/pandas.svg', alt: 'Pandas'},
+        {src: '/icons/scikit-learn.png', alt: 'Scikit-learn'},
+        {src: '/icons/restful api.png', alt: 'RESTful APIs'},
+    ]
+
+    const toolsAndPlatIcons = [
+        {src: '/icons/github.svg', alt: 'GitHub'},
+        {src: '/icons/docker.svg', alt: 'Docker'},
+        {src: '/icons/aws.svg', alt: 'AWS'},
+        {src: '/icons/firebase.svg', alt: 'Firebase'},
         {src: '/icons/vercel.svg', alt: 'Vercel'},
-        {src: '/icons/vs-code.svg', alt: 'VS-Code'},
+        {src: '/icons/figma.svg', alt: 'Figma'},
     ]
 
     return (
@@ -59,8 +67,10 @@ export default function About() {
                 <h1 className="text-2xl font-bold">Skills</h1>
                 <h2 className="text-xl mt-4 mb-4 font-semibold">Languages</h2>
                 <SkillsGrid icons={languageIcons}/>
-                <h2 className="text-xl mt-8 mb-4 font-semibold">Tools and Technologies</h2>
-                <SkillsGrid icons={toolsAndTechIcons}/>
+                <h2 className="text-xl mt-8 mb-4 font-semibold">Frameworks and Libraries</h2>
+                <SkillsGrid icons={frameAndLibIcons}/>
+                <h2 className="text-xl mt-8 mb-4 font-semibold">Tools and Platforms</h2>
+                <SkillsGrid icons={toolsAndPlatIcons}/>
             </div>
         </section>
     )
