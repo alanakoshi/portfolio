@@ -6,27 +6,38 @@ export default function About() {
         {src: '/icons/java.png', alt: 'Java'},
         {src: '/icons/python.svg', alt: 'Python'},
         {src: '/icons/c.svg', alt: 'C'},
+        {src: '/icons/c++.svg', alt: 'C++'},
         {src: '/icons/javascript.svg', alt: 'JavaScript'},
+        {src: '/icons/typescript.svg', alt: 'TypeScript'},
         {src: '/icons/html.svg', alt: 'HTML'},
         {src: '/icons/css.svg', alt: 'CSS'},
-        {src: '/icons/rust.svg', alt: 'Rust'},
-        {src: '/icons/sql.png', alt: 'SQL'}
+        {src: '/icons/sql.png', alt: 'SQL'},
+        {src: '/icons/swift.svg', alt: 'Swift'}
     ]
 
     const frameAndLibIcons = [
         {src: '/icons/react.svg', alt: 'React'},
         {src: '/icons/next.svg', alt: 'Next.js'},
+        {src: '/icons/swiftui.png', alt: 'SwiftUI'},
+        {src: '/icons/uikit.svg', alt: 'UIKit'},
+        {src: '/icons/tensorflow.svg', alt: 'TensorFlow'},
+        {src: '/icons/fastapi.svg', alt: 'FastAPI'},
         {src: '/icons/tailwind css.svg', alt: 'Tailwind CSS'},
         {src: '/icons/pandas.svg', alt: 'Pandas'},
         {src: '/icons/scikit-learn.png', alt: 'Scikit-learn'},
-        {src: '/icons/restful api.png', alt: 'RESTful APIs'},
+        {src: '/icons/numpy.svg', alt: 'NumPy'},
     ]
 
     const toolsAndPlatIcons = [
+        {src: '/icons/git.svg', alt: 'Git'},
         {src: '/icons/github.svg', alt: 'GitHub'},
+        {src: '/icons/gitlab.svg', alt: 'GitLab'},
+        {src: '/icons/rest api.png', alt: 'REST APIs'},
         {src: '/icons/docker.svg', alt: 'Docker'},
+        {src: '/icons/ci:cd.webp', alt: 'CI/CD'},
         {src: '/icons/aws.svg', alt: 'AWS'},
         {src: '/icons/firebase.svg', alt: 'Firebase'},
+        {src: '/icons/supabase.svg', alt: 'Supabase'},
         {src: '/icons/vercel.svg', alt: 'Vercel'},
         {src: '/icons/figma.svg', alt: 'Figma'},
     ]
@@ -47,9 +58,8 @@ export default function About() {
                 {/* About Message */}
                 <div className="flex flex-col justify-center items-center mx-8 mb-8 md:my-8 text-black text-lg md:text-xl p-4 md:w-1/2 xl:p-16 2xl:p-24 space-y-6 shadow-xl rounded-xl border border-[#c87377]">
                     <p>
-                        Hi, I’m Alana Koshikawa! I am an upcoming senior 
-                        at the University of Texas at Austin, majoring in
-                        Computer Science with a minor in Business. 
+                        Hi, I’m Alana Koshikawa! I am a Computer Science graduate 
+                        from the University of Texas at Austin with a minor in Business. 
                     </p>
                     <p>
                         I’m passionate about designing and building
